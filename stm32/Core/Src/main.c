@@ -75,6 +75,10 @@ void setNumberOnClock(int num)
 {
 	HAL_GPIO_WritePin(GPIOA, 1 << (num + 4), SET);
 }
+void clearNumberOnClock(int num)
+{
+	HAL_GPIO_WritePin(GPIOA, 1 << (num +4), RESET);
+}
 /* USER CODE END 0 */
 
 /**
@@ -110,10 +114,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int check = 0 ;
   while (1)
    {
-
-	 setNumberOnClock(6);
+	  if(check == 0)
+	  {
+		  setNumberOnClock(6);
+		  check = 1;
+	  }
+	  else {
+		  clearNumberOnClock(6);
+		  check = 0;
+	  }
 	 HAL_Delay(300);
     /* USER CODE END WHILE */
 
