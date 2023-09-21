@@ -57,18 +57,18 @@ static void MX_GPIO_Init(void);
 
 void clearAllClock()
 {
-	HAL_GPIO_WritePin(GPIOA, i << 4, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 5, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 6, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 7, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 8, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 9, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 10, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 11, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 12, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 13, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 14, RESET);
-	HAL_GPIO_WritePin(GPIOA, i << 15, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 4, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 5, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 6, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 7, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 8, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 9, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 10, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 11, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 12, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 13, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 14, RESET);
+	HAL_GPIO_WritePin(GPIOA, 1 << 15, RESET);
 
 }
 /* USER CODE END 0 */
