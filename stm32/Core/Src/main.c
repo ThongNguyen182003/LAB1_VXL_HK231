@@ -114,23 +114,41 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int check = 0 ;
-  while (1)
-   {
-	  if(check == 0)
+  int hour = 2, min =59, sec = 25;
+while (1)
 	  {
-		  setNumberOnClock(6);
-		  check = 1;
+		 if(sec ==0)
+		 {
+			clearAllClock();
+		 }
+		 else
+			 clearNumberOnClock((sec-1)/5);
+		 if(min == 0)
+		 {
+			 clearAllClock();
+		 }
+		 else clearNumberOnClock((min-1)/5);
+		 clearNumberOnClock(hour - 1);
+		 setNumberOnClock(min/5);
+		 setNumberOnClock(sec/5);
+		 setNumberOnClock(hour);
+		 sec++;
+		 if(sec >= 60)
+		 {
+			 sec = 0 ;
+			 min++;
+		 }
+		 if( min >= 60)
+		 {
+			 min = 0;
+			 hour++;
+		 }
+		 hour = hour%12;
+		 HAL_Delay(1000);
 	  }
-	  else {
-		  clearNumberOnClock(6);
-		  check = 0;
-	  }
-	 HAL_Delay(300);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    }
   /* USER CODE END 3 */
 }
 
