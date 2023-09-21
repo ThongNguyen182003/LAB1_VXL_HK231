@@ -69,7 +69,7 @@ void display7SEG(int num) {
    }
    else if( num == 1)
    {
-   	HAL_GPIO_WritePin(GPIOA, a_Pin, SET);
+   	HAL_GPIO_WritePin(GPIOB, a_Pin, SET);
 		HAL_GPIO_WritePin(GPIOB, b_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOB, c_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOB, d_Pin, SET);
@@ -199,6 +199,7 @@ int main(void)
   while (1)
    {
 	  count --;
+	  display7SEG(count);
 	  if(status == 0 && count <= 0)
 	  {
 		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
