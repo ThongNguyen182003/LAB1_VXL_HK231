@@ -79,7 +79,7 @@ void display7SEG(int num) {
    }
    else if (num == 2)
    {
-   	HAL_GPIO_WritePin(GPIOA, a_Pin, RESET);
+   	HAL_GPIO_WritePin(GPIOB, a_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOB, b_Pin, RESET);
 		HAL_GPIO_WritePin(GPIOB, c_Pin, SET);
 		HAL_GPIO_WritePin(GPIOB, d_Pin, RESET);
