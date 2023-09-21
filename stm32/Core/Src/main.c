@@ -69,7 +69,11 @@ void clearAllClock()
 	HAL_GPIO_WritePin(GPIOA, 1 << 13, RESET);
 	HAL_GPIO_WritePin(GPIOA, 1 << 14, RESET);
 	HAL_GPIO_WritePin(GPIOA, 1 << 15, RESET);
+}
 
+void setNumberOnClock(int num)
+{
+	HAL_GPIO_WritePin(GPIOA, 1 << (num + 4), SET);
 }
 /* USER CODE END 0 */
 
@@ -106,27 +110,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int i = 4;
-  int check = 0;
   while (1)
    {
-	 if( i >15 )
-	 {
-		i = 3;
-		check = 0;
-		HAL_GPIO_WritePin(GPIOA, 1 << 15, RESET);
-	 }
-	 else if (check == 0)
-	 {
-		 HAL_GPIO_WritePin(GPIOA, 1 << i, SET);
-		 check =1 ;
-	 } else if (check == 1)
-	 {
-		 i = i - 1;
-		 HAL_GPIO_WritePin(GPIOA, 1 << i, RESET);
-		 check = 0;
-	 }
-	 i ++;
+
+	 setNumberOnClock(6);
 	 HAL_Delay(300);
     /* USER CODE END WHILE */
 
