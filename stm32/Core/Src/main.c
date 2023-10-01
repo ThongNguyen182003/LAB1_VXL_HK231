@@ -198,6 +198,7 @@ int main(void)
   int status = 0;
   while (1)
    {
+	  display7SEG(6);
 	  count --;
 	  if(status == 0 && count <= 0)
 	  {
